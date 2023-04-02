@@ -49,7 +49,6 @@ a {
   box-shadow: inset 0px -4px 0px #10212a;
   border-radius: 10px;
   border: none;
-
   font-family: "Outfit";
   font-style: normal;
   font-weight: 700;
@@ -58,7 +57,6 @@ a {
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
-
   color: #a8bfc9;
 }
 
@@ -68,6 +66,12 @@ a {
   box-shadow: inset 0px -4px 0px #6b8997;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+.refresh:hover {
+  background: #dbe8ed;
 }
 
 .board {
@@ -90,6 +94,7 @@ a {
   border-radius: 15px;
   margin-left: 20px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .square.x,
@@ -179,12 +184,16 @@ a {
   width: 64px;
   height: 64px;
   margin-top: 40px;
-  border: 20px solid #f2b137;
+  border: 20px solid lightgray;
   display: block;
   margin: 0 auto;
   top: -20%;
   left: -15px;
   transform: translate(50%, 50%);
+}
+
+.square.circle::after {
+  border: 20px solid #f2b137;
 }
 
 .wiiiiii {
@@ -193,26 +202,50 @@ a {
 
 .winning-message {
   position: fixed;
-  top: 40%;
+  top: 35%;
   right: 0;
   bottom: 0;
   left: 0;
   display: flex;
   background-color: rgb(0, 0, 0, 0.9);
-  justify-content: center;
   align-items: center;
   color: white;
   font-size: 5rem;
   flex-direction: column;
   display: none;
-  height: 250px;
   min-width: 100vw;
+  height: 300px;
   background: #1f3641;
+}
+
+.winnig-message__paragraph {
+  padding-top: 45px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #a8bfc9;
+  text-transform: uppercase;
 }
 
 .winning-message > div > p {
   margin: 0;
   display: flex;
+}
+
+.data-winnig-message-paragraph {
+  padding-left: 20px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 2.5px;
+  color: #f2b137;
+  text-transform: uppercase;
 }
 
 .winning-message button {
@@ -233,6 +266,8 @@ a {
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
+  transition: 0.3s all ease;
+  cursor: pointer;
 }
 
 .quit {
@@ -240,10 +275,15 @@ a {
   background: #a8bfc9;
   box-shadow: inset 0px -4px 0px #6b8997;
   border-radius: 10px;
-
-  /* Dark Navy */
-
   color: #1a2a33;
+}
+
+.winning-message button:hover {
+  background: #ffc860;
+}
+
+.quit:hover {
+  background: #dbe8ed;
 }
 
 .winning-message.show {

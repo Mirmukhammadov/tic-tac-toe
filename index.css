@@ -54,14 +54,22 @@ a {
   background-color: #1a2a33;
 }
 
-.axes-div {
-  width: 180px;
-}
-.oval-div {
+.option-div {
   padding: 20px;
-  width: 200px;
-  background: #a8bfc9;
+  width: 155px;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.option-div:hover {
+  background: rgba(168, 191, 201, 0.05);
+}
+
+.div {
+  padding: 20px;
+  width: 155px;
+  border-radius: 10px;
+  background: #a8bfc9;
 }
 
 .oval,
@@ -98,10 +106,9 @@ a {
   text-align: center;
   letter-spacing: 1.25px;
   text-transform: uppercase;
-
-  /* Dark Navy */
-
   color: #1a2a33;
+  transition: 0.3s all ease;
+  cursor: pointer;
 }
 
 .gameVsCpu {
@@ -124,4 +131,23 @@ a {
   box-shadow: inset 0px -8px 0px #118c87;
   border-radius: 15px;
   border: none;
+}
+
+.gameVsCpu:hover,
+.gameVsPlayer :hover {
+  background: #ffc860;
+  box-shadow: inset 0px -8px 0px #cc8b13;
+  border-radius: 15px;
+}
+
+.gameVsPlayer:hover {
+  background: #65e9e4;
+}
+
+@media only screen and (max-width: 450px) {
+  .gameVsCpu,
+  .gameVsPlayer {
+    padding: 20px 20px 25px;
+    width: 340px;
+  }
 }

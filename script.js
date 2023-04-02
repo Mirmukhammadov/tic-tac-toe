@@ -8,7 +8,10 @@ const winningMesaage = document.querySelectorAll("[data-winnig-message-text]");
 const Restartbutton = document.querySelector("#restartButton");
 const Refresh = document.querySelector(".refresh");
 const whosTurn = document.querySelector(".whos-turn");
-
+const winningImage = document.querySelector("#winning-image");
+const winnigMessageParagraph = document.querySelector(
+  ".winnig-message__paragraph"
+);
 const xWin = document.querySelector(".x-win");
 const tie = document.querySelector(".tie");
 const yWin = document.querySelector(".y-win");
@@ -93,16 +96,25 @@ function endgame(draw) {
   rounds++;
   if (draw) {
     winningMesaage.forEach((message) => {
-      message.innerHTML = "It's a Draw!";
-      tie.textContent = `It's draw  ${++z}`;
+      winningImage.src = "";
+      winnigMessageParagraph.textContent = "";
+      message.innerHTML = "ROUND TIED";
+      message.style.color = "#A8BFC9";
+      tie.textContent = `IT DRAW  ${++z}`;
     });
   } else {
     winningMesaage.forEach((message) => {
       if (circleturn) {
-        message.innerHTML = "O Takes Round";
+        winningImage.src = "./images 14.35.43/Oval-yellow.svg";
+        winnigMessageParagraph.textContent = "OH NO, YOU LOST…";
+        message.innerHTML = "Takes The Round";
+        message.style.color = "#f2b137";
         yWin.innerHTML = ` Y(CPU)   ${++y}`;
       } else {
-        message.innerHTML = "X takes round";
+        winningImage.src = "./images 14.35.43/Combined.svg";
+        winnigMessageParagraph.textContent = "YOU WON!";
+        message.innerHTML = "takes The round";
+        message.style.color = "#31C3BD";
         xWin.textContent = ` X (YOU) ${++x}`;
       }
     });
