@@ -327,3 +327,9 @@ a {
 .y-win {
   background: #f2b137;
 }
+
+@media only screen and (max-width: 450px) {
+  .data-winnig-message-paragraph {
+    font-size: 30px;
+  }
+}
